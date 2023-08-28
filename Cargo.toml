@@ -1,0 +1,16 @@
+[package]
+name = "windows-nps-exploit"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.75"
+windows = { version = "0.51.1", features = ["implement", "Win32_Security", "Win32_System_WindowsProgramming", "Win32_System_Com", "Win32_System_Memory", "Win32_System_Com_Marshal", "Win32_NetworkManagement_NetworkPolicyServer", "Win32_Foundation", "Win32_System_Rpc", "Win32_System_Threading", "Win32_Security_Authorization", "Win32_System_Diagnostics_Debug"] }
